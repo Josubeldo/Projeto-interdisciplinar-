@@ -15,7 +15,7 @@
             <a href="pagina-2.html">Pacientes</a>
             <a href="pagina-3.html">Login</a>
             <a href="pagina-4.html">Informações</a>
-            <a href="index.html" class="voltar_menu">home</a>
+            <a href="index.html" class="voltar_menu"></a>
         </nav>    
     </header>
     <!--FIM CABEÇALHO-->
