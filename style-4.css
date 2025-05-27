@@ -1,0 +1,218 @@
+body {
+    margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.paragrafo-cinza {
+    color: #5f6164;
+}
+
+/*INICIO CABEÇALHO*/
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;  
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+}
+
+.titulo {
+    margin: 0;
+    font-size: 27px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu a {
+    background-color: transparent;
+    padding: 12px 3px;
+    font-size: 18px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;   
+}
+
+.menu a:hover {
+    color: #8e8f91;
+}
+
+.menu .voltar_menu {
+    padding: 12px 30px;
+    background-color: #1a1a1a;
+    border: 1px solid #000;
+    border-radius: 10px;
+    color: azure;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    transition: all 0.2s ease;
+    text-shadow: 0 1px 0 #000;
+}
+
+/*Cursor sobre o botão*/
+.menu .voltar_menu:hover {
+    background-color: #111;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    cursor: pointer;
+    color: #5f6164;
+}
+
+/*CLICK*/
+.menu .voltar_menu:active {
+    box-shadow: inset 2px 2px 4px rgba(0,0,0,0.8);
+    background-color: #000;
+}
+
+/*FIM CABEÇALHO*/
+
+/*INICIO CORPO*/
+
+/*SESSÂO 1*/
+.texto-imagem {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 20px;
+    gap: 20px;
+}
+
+.texto-esquerda {
+    flex: 1;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+.texto-esquerda h2 {
+    margin-bottom: 15px;
+    font-size: 40px;
+}
+
+.texto-esquerda p{
+    line-height: 1.6;
+}
+
+.imagem-direita {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imagem-direita img {
+    width: 80%;
+    height: 470px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    align-items:flex-end;
+}
+/*FIM SESSÃO 1*/
+
+/*SESSÃO 2*/
+.titulo-formulario{
+    margin: 40px 25px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.formulario-secao {
+    display: flex;
+    justify-content: left;
+    margin: 40px 25px;
+}
+
+.formulario {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.linha-campos {
+    display: flex;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Para que Nome e Sobrenome fiquem lado a lado com o mesmo tamanho */
+}
+
+.campo label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.campo input, 
+.campo textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.botao-enviar {
+    padding: 12px 30px;
+    background-color: #1a1a1a;
+    color: azure;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    transition: all 0.2s ease;
+    text-shadow: 0 1px 0 #000;
+}
+
+.botao-enviar:hover {
+    background-color: #111;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+/*FIM SESSÃO 2*/
+
+/*FIM CORPO*/
+
+/*INICIO RODAPÉ*/
+.rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px 40px;
+    flex-wrap: wrap;
+    gap: 40px;
+    border-top: 1px solid rgb(219, 215, 215);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.rodape-esquerdo h3 {
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-size: 25px;
+}
+
+.rodape-esquerdo .icones img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.rodape-direito {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.rodape-direito .linha {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.rodape-direito .linha p {
+    margin: 0 50px;
+    font-size: 17px;
+    flex: 1;
+}
+/*FIM RODAPÉ*/
