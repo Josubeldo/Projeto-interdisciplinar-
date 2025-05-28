@@ -1,4 +1,3 @@
-<?php
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,6 +15,8 @@
         }
         .login-container {
             background: rgba(255,255,255,0.95);
+            position: relative;
+            z-index: 2;
             border-radius: 18px;
             box-shadow: 0 8px 32px 0 rgba(31,38,135,0.15);
             padding: 40px 30px 30px 30px;
