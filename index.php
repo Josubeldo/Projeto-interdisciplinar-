@@ -14,10 +14,10 @@
     <header class="cabecalho">
         <h2 class="titulo">Nutri Kids</h2>
         <nav class="menu">
-            <a href="pagina-1.html">Médicos</a>
-            <a href="pagina-2.html">Pacientes</a>
-            <a href="pagina-3.html">Login</a>
-            <a href="pagina-4.html">Informações</a>
+            <a href="cadastro-medicos.php">Médicos</a>
+            <a href="cadastro-pacientes.php">Pacientes</a>
+            <a href="login.php">Login</a>
+            <a href="formularios-preenchimento.php">Informações</a>
             <a href="index.php" class="voltar_menu"><i class="fas fa-home"></i></a>
         </nav>
     </header>
