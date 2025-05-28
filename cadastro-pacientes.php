@@ -73,14 +73,26 @@
             display: none;
             width: 100%;
             padding: 12px;
-            background: #f7cac9;
-            color: #fff;
+            background: #cccccc;
+            color: #888888;
             border: none;
             border-radius: 8px;
             font-size: 1.1em;
-            cursor: pointer;
+            cursor: not-allowed;
             margin-top: 10px;
-            transition: background 0.3s;
+            transition: background 0.3s, color 0.3s;
+            opacity: 0.7;
+        }
+        .cadastro-btn:enabled {
+            cursor: pointer;
+            opacity: 1;
+            background: #cccccc;
+            color: #888888;
+        }
+        .cadastro-btn:enabled:hover,
+        .cadastro-btn:enabled:focus {
+            background: #c62828;
+            color: #fff;
         }
         .cadastro-container:hover .cadastro-btn,
         .cadastro-container:focus-within .cadastro-btn {
@@ -114,33 +126,58 @@
         <h1>Cadastro de Paciente</h1>
         <form method="post" action="">
             <div class="input-group">
-                <label>Nome Completo:</label>
+                <label>Nome Completo: <span style="color: #c62828;">*</span></label>
                 <input type="text" name="nome" required>
             </div>
             <div class="input-group">
-                <label>CPF:</label>
-                <input type="text" name="cpf" required>
+                <label>CPF: <span style="color: #c62828;">*</span></label>
+                <input 
+                    type="text" 
+                    name="cpf" 
+                    id="cpf"
+                    required 
+                    maxlength="11" 
+                    pattern="\d{11}" 
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,11); validarCamposPaciente();"
+                >
             </div>
             <div class="input-group">
                 <label>RG:</label>
                 <input type="text" name="rg">
             </div>
             <div class="input-group">
-                <label>Data de Nascimento:</label>
-                <input type="date" name="data_nascimento" required>
+                <label>Data de Nascimento: <span style="color: #c62828;">*</span></label>
+                <input 
+                    type="date" 
+                    name="data_nascimento" 
+                    required 
+                    min="1900-01-01" 
+                    max="2099-12-31"
+                >
             </div>
             <div class="input-group">
-                <label>Sexo:</label>
-                <select name="sexo" required>
+                <label>Sexo: <span style="color: #c62828;">*</span></label>
+                <select name="sexo" id="sexo" required onchange="mostrarOutroSexo()">
                     <option value="">Selecione</option>
                     <option value="Masculino">Masculino</option>
                     <option value="Feminino">Feminino</option>
                     <option value="Outro">Outro</option>
                 </select>
+                <input type="text" name="outro_sexo" id="outro_sexo" placeholder="Descreva o sexo" style="display:none; margin-top:8px;" />
+                <label id="label_outro_sexo" style="display:none; color: #c62828; font-size: 0.95em;">Descreva o sexo: *</label>
             </div>
             <div class="input-group">
                 <label>Celular:</label>
-                <input type="text" name="celular">
+                <input 
+                    type="text" 
+                    name="celular" 
+                    id="celular"
+                    required
+                    maxlength="11"
+                    pattern="\d{11}"
+                    placeholder="DDD + número (Ex: 11999999999)"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,11);"
+                >
             </div>
             <div class="input-group">
                 <label>Email:</label>
@@ -227,5 +264,56 @@
         }
         ?>
     </div>
+    <script>
+    function mostrarOutroSexo() {
+        var select = document.getElementById('sexo');
+        var outro = document.getElementById('outro_sexo');
+        var label = document.getElementById('label_outro_sexo');
+        if (select.value === 'Outro') {
+            outro.style.display = 'block';
+            outro.setAttribute('required', 'required');
+            label.style.display = 'block';
+        } else {
+            outro.style.display = 'none';
+            outro.removeAttribute('required');
+            outro.value = '';
+            label.style.display = 'none';
+        }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('sexo').addEventListener('change', mostrarOutroSexo);
+    });
+    </script>
+    <script>
+function validarCamposPaciente() {
+    var nome = document.querySelector('input[name="nome"]').value.trim();
+    var cpf = document.querySelector('input[name="cpf"]').value.trim();
+    var data_nascimento = document.querySelector('input[name="data_nascimento"]').value.trim();
+    var sexo = document.querySelector('select[name="sexo"]').value.trim();
+    var outroSexo = document.getElementById('outro_sexo');
+    var btn = document.querySelector('.cadastro-btn');
+
+    // Se sexo for "Outro", o campo de descrição também é obrigatório
+    var outroSexoValido = true;
+    if (sexo === "Outro") {
+        outroSexoValido = outroSexo.value.trim() !== "";
+    }
+
+    if (nome && cpf && data_nascimento && sexo && outroSexoValido) {
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('input[name="nome"]').addEventListener('input', validarCamposPaciente);
+    document.querySelector('input[name="cpf"]').addEventListener('input', validarCamposPaciente);
+    document.querySelector('input[name="data_nascimento"]').addEventListener('input', validarCamposPaciente);
+    document.querySelector('select[name="sexo"]').addEventListener('change', validarCamposPaciente);
+    document.getElementById('outro_sexo').addEventListener('input', validarCamposPaciente);
+    validarCamposPaciente();
+});
+</script>
 </body>
 </html>

@@ -64,14 +64,26 @@
             display: none;
             width: 100%;
             padding: 12px;
-            background: #f7cac9;
-            color: #fff;
+            background: #cccccc;
+            color: #888888;
             border: none;
             border-radius: 8px;
             font-size: 1.1em;
-            cursor: pointer;
+            cursor: not-allowed;
             margin-top: 10px;
-            transition: background 0.3s;
+            transition: background 0.3s, color 0.3s;
+            opacity: 0.7;
+        }
+        .login-btn:enabled {
+            cursor: pointer;
+            opacity: 1;
+            background: #cccccc;
+            color: #888888;
+        }
+        .login-btn:enabled:hover,
+        .login-btn:enabled:focus {
+            background: #c62828;
+            color: #fff;
         }
         .login-container:hover .login-btn,
         .login-container:focus-within .login-btn {
@@ -95,10 +107,12 @@
         <h2>Portal TEA</h2>
         <form method="post" action="">
             <div class="input-group">
-                <input type="text" name="usuario" placeholder="Usuário" required>
+                <label for="usuario">Usuário: <span style="color: #c62828;">*</span></label>
+                <input type="text" id="usuario" name="usuario" placeholder="Usuário" required>
             </div>
             <div class="input-group">
-                <input type="password" name="senha" placeholder="Senha" required>
+                <label for="senha">Senha: <span style="color: #c62828;">*</span></label>
+                <input type="password" id="senha" name="senha" placeholder="Senha" required>
             </div>
             <button class="login-btn" type="submit" name="entrar">Entrar</button>
         </form>
@@ -110,5 +124,22 @@
         echo "<script>alert('Login realizado!');</script>";
     }
     ?>
+    <script>
+function validarCamposLogin() {
+    var usuario = document.querySelector('input[name="usuario"]').value.trim();
+    var senha = document.querySelector('input[name="senha"]').value.trim();
+    var btn = document.querySelector('.login-btn');
+    if (usuario && senha) {
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('input[name="usuario"]').addEventListener('input', validarCamposLogin);
+    document.querySelector('input[name="senha"]').addEventListener('input', validarCamposLogin);
+    validarCamposLogin();
+});
+</script>
 </body>
 </html>

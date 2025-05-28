@@ -105,14 +105,24 @@ $conn->close();
             display: none;
             width: 100%;
             padding: 12px;
-            background: #f7cac9;
-            color: #fff;
+            background: #cccccc;
+            color: #888888;
             border: none;
             border-radius: 8px;
             font-size: 1.1em;
-            cursor: pointer;
+            cursor: not-allowed;
             margin-top: 10px;
-            transition: background 0.3s;
+            transition: background 0.3s, color 0.3s;
+            opacity: 0.7;
+        }
+        .cadastro-btn:enabled {
+            cursor: pointer;
+            opacity: 1;
+        }
+        .cadastro-btn:enabled:hover,
+        .cadastro-btn:enabled:focus {
+            background: #c62828;
+            color: #fff;
         }
         .cadastro-container:hover .cadastro-btn,
         .cadastro-container:focus-within .cadastro-btn {
@@ -155,32 +165,57 @@ $conn->close();
         ?>
         <form method="POST" action="">
             <div class="input-group">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome: <span style="color: #c62828;">*</span></label>
                 <input type="text" id="nome" name="nome" required>
             </div>
             <div class="input-group">
-                <label for="crm">CRM:</label>
+                <label for="crm">CRM: <span style="color: #c62828;">*</span></label>
                 <input type="text" id="crm" name="crm" required>
             </div>
             <div class="input-group">
-                <label for="especialidade">Especialidade:</label>
+                <label for="especialidade">Especialidade: <span style="color: #c62828;">*</span></label>
                 <input type="text" id="especialidade" name="especialidade" required>
             </div>
             <div class="input-group">
-                <label for="telefone">Telefone:</label>
+                <label for="telefone">Telefone: <span style="color: #c62828;">*</span></label>
                 <input type="text" id="telefone" name="telefone" required>
             </div>
             <div class="input-group">
-                <label for="email">E-mail:</label>
+                <label for="email">E-mail: <span style="color: #c62828;">*</span></label>
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="input-group">
-                <label for="senha">Senha:</label>
+                <label for="senha">Senha: <span style="color: #c62828;">*</span></label>
                 <input type="password" id="senha" name="senha" required>
             </div>
             <button class="cadastro-btn" type="submit">Cadastrar</button>
         </form>
         <small>Bem-vindo! Cadastre médicos para o Portal TEA.</small>
     </div>
+    <script>
+function validarCamposMedico() {
+    var nome = document.getElementById('nome').value.trim();
+    var crm = document.getElementById('crm').value.trim();
+    var especialidade = document.getElementById('especialidade').value.trim();
+    var telefone = document.getElementById('telefone').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var senha = document.getElementById('senha').value.trim();
+    var btn = document.querySelector('.cadastro-btn');
+    if (nome && crm && especialidade && telefone && email && senha) {
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('nome').addEventListener('input', validarCamposMedico);
+    document.getElementById('crm').addEventListener('input', validarCamposMedico);
+    document.getElementById('especialidade').addEventListener('input', validarCamposMedico);
+    document.getElementById('telefone').addEventListener('input', validarCamposMedico);
+    document.getElementById('email').addEventListener('input', validarCamposMedico);
+    document.getElementById('senha').addEventListener('input', validarCamposMedico);
+    validarCamposMedico();
+});
+</script>
 </body>
 </html>
