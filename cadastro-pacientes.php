@@ -169,13 +169,13 @@
             <div class="input-group">
                 <label>Celular:</label>
                 <input 
-                    type="text" 
+                    type="tel" 
                     name="celular" 
                     id="celular"
                     required
                     maxlength="11"
                     pattern="\d{11}"
-                    placeholder="DDD + número (Ex: 11999999999)"
+                    placeholder="DDD + número"
                     oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,11);"
                 >
             </div>
