@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "dbusertea";
 $password = "ProjetoInterdisciplinar";
-$dbname = "projeto-tea";
+$dbname = "projeto_tea";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -17,8 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $crm = $_POST['crm'];
     $especialidade = $_POST['especialidade'];
     $telefone = $_POST['telefone'];
+    $email = $_POST['email'];
+    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO medicos (nome, crm, especialidade, telefone) VALUES ('$nome', '$crm', '$especialidade', '$telefone')";
+    $sql = "INSERT INTO medicos (nome, crm, especialidade, telefone, email, senha) VALUES ('$nome', '$crm', '$especialidade', '$telefone', '$email', '$senha')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Cadastro realizado com sucesso!";
@@ -51,6 +53,12 @@ $conn->close();
 
         <label for="telefone">Telefone:</label><br>
         <input type="text" id="telefone" name="telefone" required><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="senha">Senha:</label><br>
+        <input type="password" id="senha" name="senha" required><br><br>
 
         <button type="submit">Cadastrar</button>
     </form>
