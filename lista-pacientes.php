@@ -1,5 +1,9 @@
 <?php
-// Protege a página (opcional, caso use login)
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 if (!isset($_SESSION['medico_id'])) {
     header("Location: login.php");
@@ -16,7 +20,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $pacientes = [];
 if (!$conn->connect_error) {
-    $sql = "SELECT nome, cpf, data_nascimento, sexo, celular, email FROM pacientes ORDER BY nome";
+    $sql = "SELECT nome, cpf, data_nascimento, sexo, endereco, telefone, email FROM pacientes ORDER BY nome";
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -37,6 +41,10 @@ if (!$conn->connect_error) {
     <div class="lista-container">
         <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="TEA Logo" />
         <h1>Pacientes Cadastrados</h1>
+        <?php if (isset($_GET['sucesso']) && $_GET['sucesso'] == 1): ?>
+            <div class="mensagem">Paciente cadastrado com sucesso!</div>
+        <?php endif; ?>
+        <a href="cadastro-pacientes.php" class="novo-btn">+ Novo Paciente</a>
         <?php if (empty($pacientes)): ?>
             <div class="mensagem">Nenhum paciente cadastrado.</div>
         <?php else: ?>
@@ -47,7 +55,8 @@ if (!$conn->connect_error) {
                     <p><strong>CPF:</strong> <?= htmlspecialchars($p['cpf']) ?></p>
                     <p><strong>Data Nasc.:</strong> <?= date('d/m/Y', strtotime($p['data_nascimento'])) ?></p>
                     <p><strong>Sexo:</strong> <?= htmlspecialchars($p['sexo']) ?></p>
-                    <p><strong>Celular:</strong> <?= htmlspecialchars($p['celular']) ?></p>
+                    <p><strong>Endereço:</strong> <?= htmlspecialchars($p['endereco']) ?></p>
+                    <p><strong>Telefone:</strong> <?= htmlspecialchars($p['telefone']) ?></p>
                     <p><strong>Email:</strong> <?= htmlspecialchars($p['email']) ?></p>
                 </div>
             <?php endforeach; ?>
