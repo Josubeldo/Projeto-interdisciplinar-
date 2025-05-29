@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/all.min.css">
-    <title>Nutri Kids</title>
+    <title>NutriVibe</title>
 </head>
 
 <body>
