@@ -49,8 +49,7 @@ body {
     height: 45px;
     border-radius: 10px;
     position: relative;
-    top: -17px;
-    
+    top: -17px; 
 }
 
 /*.menu .voltar_menu {
@@ -79,50 +78,6 @@ body {
     background-color: #000;
 }*/
 
-/*MENU MOBILE*/
-.menu-oculto {
-    display: none;
-}
-
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    justify-content: space-between;
-}
-
-.menu-icon span {
-    height: 4px;
-    background: #000;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-@media (max-width: 770px) {
-    .menu-icon {
-        display: flex;
-    }
-
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .menu-oculto:checked+.menu-icon+.menu {
-        display: flex;
-    }
-
-    .menu a {
-        margin: 10px 0;
-        text-align: center;
-    }
-}
-
-/*FIM MENU MOBILE*/
 /*FIM CABEÇALHO*/
 
 /*INICIO CORPO*/

@@ -47,7 +47,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Médicos</title>
-    <link rel="stylesheet" href="cadastro-medicos.css">
+    <link rel="stylesheet" href="cadastro-medicos-atualizado.css">
     <!--<link rel="stylesheet" href="cadastro-medicos-plus.css">-->
 </head>
 
@@ -58,7 +58,9 @@
             <a href="cadastro-medicos.php">Médicos</a>
             <a href="login.php">Login</a>
             <a href="formularios-preenchimento.php">Formulários</a>
-            <a href="index.php" class="voltar_menu"><i class="fas fa-home"></i></a>
+            <a href="index.php" class="voltar_menu">
+                <img src="imagens/casa-natural.jpeg">
+            </a>
         </nav>
     </header>
     <section class="posicao">
