@@ -18,7 +18,9 @@
             <a href="cadastro-medicos.php">Médicos</a>
             <a href="login.php">Login</a>
             <a href="formularios-preenchimento.php">Formulários</a>
-            <a href="index.php" class="voltar_menu"><i class="fas fa-home"></i></a>
+            <a href="index.php" class="voltar_menu">
+                <img src="imagens/casa-natural.jpeg">
+            </a>
         </nav>
     </header>
     <!--FIM CABEÇALHO-->
@@ -29,8 +31,8 @@
         <h1 class="titulo-principal">Sua plataforma preferida de atendimento</h1>
         <p class="p1">Onde a nutrição se transforma em diversão e bem-estar! Crie seu cadastro gratuito e tenha uma
             plataforma de escalada do comer </p>
-        <div class="beautiful-kids-container">
-            <img src="/imagens/beautiful-kid-eating.jpg" alt="Kiwi" class="beautiful-kids">
+        <div class="crianca-com-mato">
+            
         </div>
         <!-- FIM SESSÃO 1-->
 
