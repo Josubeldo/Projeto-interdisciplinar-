@@ -114,23 +114,20 @@
         <h2 class="texto5">Depoimentos</h2>
         <section class="desenvolvedores">
             <div class="dev-box">
-                <h3 class="descricao">Depoimento 1</h3>
                 <div class="dev-info">
-                    <img src="imagens/roxo.jpg" alt="roxo">
+                    <img src="imagens/livro-guia-orientacoes.jpeg" alt="roxo">
                     <p>Nome<br><small class="paragrafo-cinza">Função / Cargo</small></p>
                 </div>
             </div>
             <div class="dev-box">
-                <h3 class="descricao">Depoimento 2</h3>
                 <div class="dev-info">
-                    <img src="imagens/roxo.jpg" alt="roxo">
+                    <img src="imagens/livro-alimentos.JPG" alt="roxo">
                     <p>Nome<br><small class="paragrafo-cinza">Função / Cargo</small></p>
                 </div>
             </div>
             <div class="dev-box">
-                <h3 class="descricao">Depoimento 3</h3>
                 <div class="dev-info">
-                    <img src="imagens/roxo.jpg" alt="roxo">
+                    <img src="imagens/livro-nutrientes.JPG" alt="roxo">
                     <p>Nome<br><small class="paragrafo-cinza">Função / Cargo</small></p>
                 </div>
             </div>
@@ -144,50 +141,11 @@
             </div>
             <div class="botoes-direitos">
                 <a href="#" class="botao2">Médico</a>
-                <a href="#" class="botao3">Paciente</a>
             </div>
         </section>
         <!--FIM SESSÃO 6-->
     </main>
     <!--FIM CORPO DA PÁGINA-->
-
-    <!--RODAPÉ ESQUERDO-->
-    <footer class="rodape">
-        <div class="rodape-esquerdo">
-            <h3>Redes Sociais</h3>
-            <div class="icones">
-                <img src="imagens/roxo.jpg" alt="roxo">
-                <img src="imagens/roxo.jpg" alt="roxo">
-                <img src="imagens/roxo.jpg" alt="roxo">
-                <img src="imagens/roxo.jpg" alt="roxo">
-            </div>
-        </div>
-        <!--RODAPÉ DIREITO-->
-        <div class="rodape-direito">
-            <div class="linha">
-                <p>Sobre nós</p>
-                <p>Ajuda</p>
-                <p>Conheça</p>
-            </div>
-            <div class="linha">
-                <p class="paragrafo-cinza">Quem somos</p>
-                <p class="paragrafo-cinza">FAQ</p>
-                <p class="paragrafo-cinza">Promoções</p>
-            </div>
-            <div class="linha">
-                <p class="paragrafo-cinza">O que fazemos</p>
-                <p class="paragrafo-cinza">Fale Conosco</p>
-                <p class="paragrafo-cinza">Projetos</p>
-            </div>
-            <div class="linha">
-                <p class="paragrafo-cinza">Como fazemos</p>
-                <p class="paragrafo-cinza">Informações Legais</p>
-                <p class="paragrafo-cinza">Saiba mais</p>
-
-            </div>
-        </div>
-    </footer>
-    <!--FIM RODAPÉ-->
 
 </body>
 
