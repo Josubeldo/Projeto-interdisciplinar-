@@ -80,6 +80,12 @@ body {
     animation: pulse 2s infinite;
 }
 
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.07);}
+    100% { transform: scale(1);}
+}
+
 .cadastro-container h1 {
     margin-bottom: 18px;
     /*color: #b76e79;*/
