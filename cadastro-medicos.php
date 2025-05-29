@@ -1,43 +1,43 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
-if (isset($_POST['cadastrar'])) {
-    // Conexão com o banco de dados
-    $servername = "localhost";
-    $username = "dbusertea";
-    $password = "ProjetoInterdisciplinar";
-    $dbname = "projeto_tea";
+    if (isset($_POST['cadastrar'])) {
+        // Conexão com o banco de dados
+        $servername = "localhost";
+        $username = "dbusertea";
+        $password = "ProjetoInterdisciplinar";
+        $dbname = "projeto_tea";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-    if ($conn->connect_error) {
-        die("Falha na conexão: " . $conn->connect_error);
-    }
-
-    // Verifica se o formulário foi enviado
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nome = $_POST['nome'];
-        $crm = $_POST['crm'];
-        $especialidade = $_POST['especialidade'];
-        $telefone = $_POST['telefone'];
-        $email = $_POST['email'];
-        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-
-        $sql = "INSERT INTO medicos (nome, crm, especialidade, telefone, email, senha) VALUES ('$nome', '$crm', '$especialidade', '$telefone', '$email', '$senha')";
-
-        if ($conn->query($sql) === TRUE) {
-            header("Location: login.php?cadastro-medico=true");
-            exit();
-        } else {
-            $erro = "Erro: " . $sql . "<br>" . $conn->error;
+        if ($conn->connect_error) {
+            die("Falha na conexão: " . $conn->connect_error);
         }
-    }
 
-    $conn->close();
-}
+        // Verifica se o formulário foi enviado
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $nome = $_POST['nome'];
+            $crm = $_POST['crm'];
+            $especialidade = $_POST['especialidade'];
+            $telefone = $_POST['telefone'];
+            $email = $_POST['email'];
+            $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO medicos (nome, crm, especialidade, telefone, email, senha) VALUES ('$nome', '$crm', '$especialidade', '$telefone', '$email', '$senha')";
+
+            if ($conn->query($sql) === TRUE) {
+                header("Location: login.php?cadastro-medico=true");
+                exit();
+            } else {
+                $erro = "Erro: " . $sql . "<br>" . $conn->error;
+            }
+        }
+
+        $conn->close();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ if (isset($_POST['cadastrar'])) {
 
 <body>
     <header class="cabecalho">
-        <h2 class="titulo">Nutri Kids</h2>
+        <h2 class="titulo">NutriVibe</h2>
         <nav class="menu">
             <a href="cadastro-medicos.php">Médicos</a>
             <a href="cadastro-pacientes.php">Pacientes</a>
