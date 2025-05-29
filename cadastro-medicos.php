@@ -48,7 +48,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Médicos</title>
     <link rel="stylesheet" href="cadastro-medicos.css">
-    <link rel="stylesheet" href="cadastro-medicos-plus.css">
+    <!--<link rel="stylesheet" href="cadastro-medicos-plus.css">-->
 </head>
 
 <body>
@@ -56,14 +56,14 @@
         <h2 class="titulo">NutriVibe</h2>
         <nav class="menu">
             <a href="cadastro-medicos.php">Médicos</a>
-            <a href="cadastro-pacientes.php">Pacientes</a>
             <a href="login.php">Login</a>
             <a href="formularios-preenchimento.php">Formulários</a>
             <a href="index.php" class="voltar_menu"><i class="fas fa-home"></i></a>
         </nav>
     </header>
+    <section class="posicao">
     <div class="cadastro-container">
-        <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="TEA Logo" />
+        <img src="imagens/medica.png" alt="TEA Logo" />
         <h1>Cadastro de Médicos</h1>
         <?php
         // Exibe mensagens de sucesso ou erro
@@ -104,6 +104,7 @@
         </form>
         <small>Bem-vindo! Cadastre médicos para o Portal TEA.</small>
     </div>
+    </section>
     <script>
         function validarCamposMedico() {
             var nome = document.getElementById('nome').value.trim();
