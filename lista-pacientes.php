@@ -20,7 +20,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $pacientes = [];
 if (!$conn->connect_error) {
-    $sql = "SELECT nome, cpf, data_nascimento, sexo, endereco, telefone, email FROM pacientes ORDER BY nome";
+    $sql = "SELECT id, nome, cpf, data_nascimento, sexo, endereco, telefone, email FROM pacientes ORDER BY nome";
     $result = $conn->query($sql);
     if ($result && $result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -68,6 +68,7 @@ if (!$conn->connect_error) {
                     <p><strong>Endereço:</strong> <?= htmlspecialchars($p['endereco']) ?></p>
                     <p><strong>Telefone:</strong> <?= htmlspecialchars($p['telefone']) ?></p>
                     <p><strong>Email:</strong> <?= htmlspecialchars($p['email']) ?></p>
+                    <a href="cadastro-pacientes.php?id=<?= urlencode($p['id']) ?>" class="editar-btn">Editar</a>
                 </div>
             <?php endforeach; ?>
         </div>
