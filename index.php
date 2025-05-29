@@ -40,17 +40,17 @@
         <h2 class="titulo2">Escalada do comer</h2>
         <section class="tres-img-agrupadas">
             <div class="item-tres-img">
-                <img src="imagens/roxo.jpg">
+                <img src="imagens/alimentos-mesa.jpeg">
                 <p>Alimentos</p>
                 <p class="paragrafo-cinza">Registre os alimentos que serão utilizados.</p>
             </div>
             <div class="item-tres-img">
-                <img src="imagens/roxo.jpg">
+                <img src="imagens/crianca-aborora.jpeg">
                 <p>Interação</p>
                 <p class="paragrafo-cinza">Registre os níveis de interação inicial e final a cada sessão.</p>
             </div>
             <div class="item-tres-img">
-                <img src="imagens/roxo.jpg">
+                <img src="imagens/pao.jpeg">
                 <p>Progresso</p>
                 <p class="paragrafo-cinza">Veja o progresso que seu paciente fez a cada sessão com gráficos e tabelas de
                     interação.</p>
@@ -89,7 +89,7 @@
                 </p>
             </div>
             <div class="imagem-direita">
-                <img src="imagens/roxo.jpg" alt="Roxo">
+                <img src="imagens/crianca-escada.jpeg" alt="Roxo">
             </div>
         </section>
         <!--FIM SESSÃO 3-->
@@ -98,12 +98,12 @@
         <h2 class="titulo4">Relatorios disponíveis</h2>
         <section class="duas-img-agrupadas">
             <div class="item-duas-img">
-                <img src="imagens/roxo.jpg">
+                <img src="imagens/food.JPG">
                 <p>Gráficos de Evolução</p>
                 <p class="paragrafo-cinza">Gráficos em pizza, demonstrando a evolução do paciente a medida que novas sessões forem sendo adicionadas.</p>
             </div>
             <div class="item-duas-img">
-                <img src="imagens/roxo.jpg">
+                <img src="imagens/grafico-fruta.JPG">
                 <p>Avaliação do período de sessões</p>
                 <p class="paragrafo-cinza">Avaliação dentro de um período ou uma avaliação individual de alimentos, auxiliando o profissional a decidir qual o próximo passo e estratégia necessária a seguir.</p>
             </div>
