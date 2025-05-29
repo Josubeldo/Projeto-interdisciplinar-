@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if (isset($_POST['cadastrar'])) {
     $servername = "localhost";
     $username = "dbusertea";
@@ -13,24 +17,16 @@ if (isset($_POST['cadastrar'])) {
         // Coleta e escapa os dados do formulário
         $nome = $conn->real_escape_string($_POST['nome']);
         $cpf = $conn->real_escape_string($_POST['cpf']);
-        $rg = $conn->real_escape_string($_POST['rg']);
         $data_nascimento = $conn->real_escape_string($_POST['data_nascimento']);
         $sexo = $conn->real_escape_string($_POST['sexo']);
-        $celular = $conn->real_escape_string($_POST['celular']);
-        $email = $conn->real_escape_string($_POST['email']);
         $endereco = $conn->real_escape_string($_POST['endereco']);
-        $numero = $conn->real_escape_string($_POST['numero']);
-        $complemento = $conn->real_escape_string($_POST['complemento']);
-        $bairro = $conn->real_escape_string($_POST['bairro']);
-        $cidade = $conn->real_escape_string($_POST['cidade']);
-        $estado = $conn->real_escape_string($_POST['estado']);
-        $cep = $conn->real_escape_string($_POST['cep']);
-        $nacionalidade = $conn->real_escape_string($_POST['nacionalidade']);
+        $telefone = $conn->real_escape_string($_POST['telefone']);
+        $email = $conn->real_escape_string($_POST['email']);
 
         $sql = "INSERT INTO pacientes (
-                    nome, cpf, rg, data_nascimento, sexo, celular, email, endereco, numero, complemento, bairro, cidade, estado, cep, nacionalidade
+                    nome, cpf, data_nascimento, sexo, endereco, telefone, email
                 ) VALUES (
-                    '$nome', '$cpf', '$rg', '$data_nascimento', '$sexo', '$celular', '$email', '$endereco', '$numero', '$complemento', '$bairro', '$cidade', '$estado', '$cep', '$nacionalidade'
+                    '$nome', '$cpf', '$data_nascimento', '$sexo', '$endereco', '$telefone', '$email'
                 )";
 
         if ($conn->query($sql) === TRUE) {
@@ -65,12 +61,8 @@ if (isset($_POST['cadastrar'])) {
             </div>
             <div class="input-group">
                 <label>CPF: <span style="color: #c62828;">*</span></label>
-                <input type="text" name="cpf" id="cpf" required maxlength="11" pattern="\d{11}"
-                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,11); validarCamposPaciente();">
-            </div>
-            <div class="input-group">
-                <label>RG:</label>
-                <input type="text" name="rg">
+                <input type="text" name="cpf" id="cpf" required maxlength="20" pattern="\d{11,20}"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,20); validarCamposPaciente();">
             </div>
             <div class="input-group">
                 <label>Data de Nascimento: <span style="color: #c62828;">*</span></label>
@@ -78,99 +70,41 @@ if (isset($_POST['cadastrar'])) {
             </div>
             <div class="input-group">
                 <label>Sexo: <span style="color: #c62828;">*</span></label>
-                <select name="sexo" id="sexo" required onchange="mostrarOutroSexo()">
+                <select name="sexo" id="sexo" required>
                     <option value="">Selecione</option>
-                    <option value="Masculino">Masculino</option>
-                    <option value="Feminino">Feminino</option>
-                    <option value="Outro">Outro</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="O">Outro</option>
                 </select>
-                <input type="text" name="outro_sexo" id="outro_sexo" placeholder="Descreva o sexo"
-                    style="display:none; margin-top:8px;" />
-                <label id="label_outro_sexo" style="display:none; color: #c62828; font-size: 0.95em;">Descreva o sexo:
-                    *</label>
             </div>
             <div class="input-group">
-                <label>Celular:</label>
-                <input type="tel" name="celular" id="celular" required maxlength="11" pattern="\d{11}"
-                    placeholder="DDD + número" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,11);">
+                <label>Endereço: <span style="color: #c62828;">*</span></label>
+                <input type="text" name="endereco" required>
+            </div>
+            <div class="input-group">
+                <label>Telefone: <span style="color: #c62828;">*</span></label>
+                <input type="tel" name="telefone" id="telefone" required maxlength="20"
+                    placeholder="DDD + número" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,20);">
             </div>
             <div class="input-group">
                 <label>Email:</label>
                 <input type="email" name="email">
             </div>
-            <div class="input-group">
-                <label>Endereço:</label>
-                <input type="text" name="endereco">
-            </div>
-            <div class="input-group">
-                <label>Número:</label>
-                <input type="text" name="numero">
-            </div>
-            <div class="input-group">
-                <label>Complemento:</label>
-                <input type="text" name="complemento">
-            </div>
-            <div class="input-group">
-                <label>Bairro:</label>
-                <input type="text" name="bairro">
-            </div>
-            <div class="input-group">
-                <label>Cidade:</label>
-                <input type="text" name="cidade">
-            </div>
-            <div class="input-group">
-                <label>Estado:</label>
-                <input type="text" name="estado">
-            </div>
-            <div class="input-group">
-                <label>CEP:</label>
-                <input type="text" name="cep">
-            </div>
-            <div class="input-group">
-                <label>Nacionalidade:</label>
-                <input type="text" name="nacionalidade">
-            </div>
             <button class="cadastro-btn" type="submit" name="cadastrar">Cadastrar</button>
         </form>
         <small>Bem-vindo! Cadastre pacientes para o Portal TEA.</small>
-
     </div>
-    <script>
-        function mostrarOutroSexo() {
-            var select = document.getElementById('sexo');
-            var outro = document.getElementById('outro_sexo');
-            var label = document.getElementById('label_outro_sexo');
-            if (select.value === 'Outro') {
-                outro.style.display = 'block';
-                outro.setAttribute('required', 'required');
-                label.style.display = 'block';
-            } else {
-                outro.style.display = 'none';
-                outro.removeAttribute('required');
-                outro.value = '';
-                label.style.display = 'none';
-            }
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('sexo').addEventListener('change', mostrarOutroSexo);
-        });
-    </script>
     <script>
         function validarCamposPaciente() {
             var nome = document.querySelector('input[name="nome"]').value.trim();
             var cpf = document.querySelector('input[name="cpf"]').value.trim();
             var data_nascimento = document.querySelector('input[name="data_nascimento"]').value.trim();
             var sexo = document.querySelector('select[name="sexo"]').value.trim();
-            var outroSexo = document.getElementById('outro_sexo');
+            var endereco = document.querySelector('input[name="endereco"]').value.trim();
+            var telefone = document.querySelector('input[name="telefone"]').value.trim();
             var btn = document.querySelector('.cadastro-btn');
 
-            // Se sexo for "Outro", o campo de descrição também é obrigatório
-            var outroSexoValido = true;
-            if (sexo === "Outro") {
-                outroSexoValido = outroSexo.value.trim() !== "";
-            }
-
-            if (nome && cpf && data_nascimento && sexo && outroSexoValido) {
+            if (nome && cpf && data_nascimento && sexo && endereco && telefone) {
                 btn.disabled = false;
             } else {
                 btn.disabled = true;
@@ -182,7 +116,8 @@ if (isset($_POST['cadastrar'])) {
             document.querySelector('input[name="cpf"]').addEventListener('input', validarCamposPaciente);
             document.querySelector('input[name="data_nascimento"]').addEventListener('input', validarCamposPaciente);
             document.querySelector('select[name="sexo"]').addEventListener('change', validarCamposPaciente);
-            document.getElementById('outro_sexo').addEventListener('input', validarCamposPaciente);
+            document.querySelector('input[name="endereco"]').addEventListener('input', validarCamposPaciente);
+            document.querySelector('input[name="telefone"]').addEventListener('input', validarCamposPaciente);
             validarCamposPaciente();
         });
     </script>

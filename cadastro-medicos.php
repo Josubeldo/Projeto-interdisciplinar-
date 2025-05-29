@@ -48,6 +48,7 @@ if (isset($_POST['cadastrar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Médicos</title>
     <link rel="stylesheet" href="cadastro-medicos.css">
+    <link rel="stylesheet" href="cadastro-medicos-plus.css">
 </head>
 
 <body>
