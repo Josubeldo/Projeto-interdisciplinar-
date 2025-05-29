@@ -1,116 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Login - Portal TEA</title>
-    <style>
-        body {
-            background: linear-gradient(120deg, #f7cac9 0%, #f9e79f 100%);
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .login-container {
-            background: rgba(255,255,255,0.95);
-            position: relative;
-            z-index: 2;
-            border-radius: 18px;
-            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.15);
-            padding: 40px 30px 30px 30px;
-            width: 350px;
-            position: relative;
-            text-align: center;
-            animation: slideDown 1s ease;
-        }
-        @keyframes slideDown {
-            from { transform: translateY(-60px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .login-container img {
-            width: 80px;
-            margin-bottom: 10px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1);}
-            50% { transform: scale(1.07);}
-            100% { transform: scale(1);}
-        }
-        .login-container h2 {
-            margin-bottom: 18px;
-            color: #b76e79;
-        }
-        .input-group {
-            margin-bottom: 18px;
-        }
-        .input-group input {
-            width: 90%;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            background: #ffe5d9;
-            color: #b76e79;
-            font-size: 1em;
-            outline: none;
-            transition: background 0.3s;
-        }
-        .input-group input:focus {
-            background: #f9e79f;
-        }
-        .login-btn {
-            display: none;
-            width: 100%;
-            padding: 12px;
-            background: #cccccc;
-            color: #888888;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            cursor: not-allowed;
-            margin-top: 10px;
-            transition: background 0.3s, color 0.3s;
-            opacity: 0.7;
-        }
-        .login-btn:enabled {
-            cursor: pointer;
-            opacity: 1;
-            background: #cccccc;
-            color: #888888;
-        }
-        .login-btn:enabled:hover,
-        .login-btn:enabled:focus {
-            background: #c62828;
-            color: #fff;
-        }
-        .login-container:hover .login-btn,
-        .login-container:focus-within .login-btn {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0;}
-            to { opacity: 1;}
-        }
-        .login-container small {
-            color: #b76e79;
-            display: block;
-            margin-top: 10px;
-        }
-        .mensagem-sucesso {
-            background: #eafaf1;
-            color: #27ae60;
-            border: 1px solid #27ae60;
-            border-radius: 8px;
-            padding: 10px;
-            margin-bottom: 18px;
-            font-weight: bold;
-            font-size: 1em;
-            animation: fadeIn 0.8s;
-        }
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="login-container">
@@ -119,6 +15,9 @@
         <?php
         if (isset($_GET['cadastro-medico'])) {
             echo "<div class='mensagem-sucesso'>Médico cadastrado com sucesso!<br>Faça login com seu usuário e senha.</div>";
+        }
+        if (isset($erro_login)) {
+            echo "<div class='erro'>$erro_login</div>";
         }
         ?>
         <form method="post" action="">
@@ -135,10 +34,44 @@
         <small>Bem-vindo! Portal dedicado ao cuidado de pessoas com TEA.</small>
     </div>
     <?php
-
     if (isset($_POST['entrar'])) {
-        // Aqui você pode adicionar a lógica de autenticação
-        echo "<script>alert('Login realizado!');</script>";
+        $usuario = $_POST['usuario'];
+        $senha = $_POST['senha'];
+
+        // Conexão com o banco de dados
+        $servername = "localhost";
+        $username = "dbusertea";
+        $password = "ProjetoInterdisciplinar";
+        $dbname = "projeto_tea";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error) {
+            $erro_login = "Erro de conexão com o banco de dados.";
+        } else {
+            // Busca o médico pelo email
+            $stmt = $conn->prepare("SELECT id, nome, email, senha FROM medicos WHERE email = ?");
+            $stmt->bind_param("s", $usuario);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result && $result->num_rows === 1) {
+                $medico = $result->fetch_assoc();
+                if (password_verify($senha, $medico['senha'])) {
+                    // Login bem-sucedido
+                    $_SESSION['medico_id'] = $medico['id'];
+                    $_SESSION['medico_nome'] = $medico['nome'];
+                    header("Location: dashboard.php");
+                    exit();
+                } else {
+                    $erro_login = "Usuário ou senha inválidos.";
+                }
+            } else {
+                $erro_login = "Usuário ou senha inválidos.";
+            }
+            $stmt->close();
+            $conn->close();
+        }
     }
     ?>
     <script>

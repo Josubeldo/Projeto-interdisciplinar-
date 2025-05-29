@@ -236,6 +236,7 @@ if (isset($_POST['cadastrar'])) {
                 <input type="password" id="senha" name="senha" required>
             </div>
             <button class="cadastro-btn" type="submit" name="cadastrar">Cadastrar</button>
+            <button class="cadastro-btn" type="submit" name="cancelar">Cancelar</button>
         </form>
         <small>Bem-vindo! Cadastre médicos para o Portal TEA.</small>
     </div>
