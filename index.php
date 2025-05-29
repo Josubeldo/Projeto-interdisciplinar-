@@ -28,9 +28,9 @@
     <!--CORPO DA PÁGINA-->
     <!--SESSÃO 1-->
     <main class="conteudo">
-        <h1 class="titulo-principal">Sua plataforma preferida de atendimento</h1>
-        <p class="p1">Onde a nutrição se transforma em diversão e bem-estar! Crie seu cadastro gratuito e tenha uma
-            plataforma de escalada do comer </p>
+        <h1 class="titulo-principal">Nutrição Infantil: Saúde para Crescer e Brincar</h1>
+        <p class="p1">Ponha a saúde da criança em primeiro lugar! Cadastre-se agora e otimize suas 
+        consultas! </p>
         <div class="crianca-com-mato">
             
         </div>
@@ -51,9 +51,9 @@
             </div>
             <div class="item-tres-img">
                 <img src="imagens/pao.jpeg">
-                <p>Progresso</p>
-                <p class="paragrafo-cinza">Veja o progresso que seu paciente fez a cada sessão com gráficos e tabelas de
-                    interação.</p>
+                <p>Comer</p>
+                <p class="paragrafo-cinza">Veja o progresso que seu paciente fez a cada sessão com gráficos 
+                    e tabelas de interação.</p>
             </div>
         </section>
         <!-- FIM SESSÃO 2-->
@@ -61,32 +61,23 @@
         <!--SESSÃO 3-->
         <section class="texto-imagem">
             <div class="texto-esquerda">
-                <h2 class="texto3">Escalada do Comer</h2>
-
+                <h2 class="texto3">O que é isso afinal de contas? e As etapas da Escalada do Comer</h2>
                 <p>O que é isso afinal de contas?</p>
-                <p class="paragrafo-cinza">A Escalada do Comer é um conceito fundamental dentro da nutrição infantil que
-                    descreve o processo natural e gradual pelo qual a criança desenvolve suas habilidades alimentares,
-                    amplia o repertório alimentar e constrói uma relação saudável com a comida.
-
-                    Esse processo acontece em etapas, respeitando o ritmo individual de cada criança, suas preferências,
-                    sua curiosidade e até mesmo suas inseguranças. Entender a Escalada do Comer ajuda pais, cuidadores e
-                    profissionais a oferecerem o suporte necessário sem gerar pressões ou traumas.</p>
-                <p>As etapas da Escalada do Comer</p>
-                <p class="paragrafo-cinza">
-                    Tolerar: A criança começa a reconhecer os alimentos, observando-os e se familiarizando com suas
-                    cores, formas e cheiros. É o primeiro passo para a aceitação.
-                </p>
-                <p class="paragrafo-cinza">Interagir: A criança passa a explorar o alimento com os sentidos: olhando,
-                    tocando, cheirando e brincando. Essa
-                    fase é fundamental para gerar familiaridade e segurança.</p>
-                <p class="paragrafo-cinza">Provar
-                    Quando se sente confortável, a criança dá o próximo passo: leva o alimento à boca, mesmo que seja
-                    apenas para experimentar, sem necessariamente engolir.
-                </p>
-                <p class="paragrafo-cinza">Comer: Após várias experiências positivas, a criança finalmente inclui o
-                    alimento na sua rotina alimentar,
-                    consumindo-o com prazer e confiança.
-                </p>
+                <p>A Escalada do Comer é um conceito fundamental dentro da nutrição infantil que descreve 
+                   o processo natural e gradual pelo qual a criança desenvolve suas habilidades 
+                   alimentares, amplia o repertório alimentar e constrói uma relação saudável com a comida. 
+                   Esse processo acontece em etapas, respeitando o ritmo individual de cada criança, suas 
+                   preferências, sua curiosidade e até mesmo suas inseguranças. Entender a Escalada do Comer 
+                   ajuda pais, cuidadores e profissionais a oferecerem o suporte necessário sem gerar pressões 
+                   ou traumas.</p>
+                <p> Tolerar: A criança começa a reconhecer os alimentos, observando-os e se familiarizando 
+                    com suas cores, formas e cheiros. É o primeiro passo para a aceitação.<br><br>
+                    Interagir: A criança passa a explorar o alimento com os sentidos: olhando, tocando, 
+                    cheirando e brincando. Essa fase é fundamental para gerar familiaridade e segurança.<br><br>
+                    Provar: Quando se sente confortável, a criança dá o próximo passo: leva o alimento à 
+                    boca, mesmo que seja apenas para experimentar, sem necessariamente engolir.<br><br>
+                    Comer: Após várias experiências positivas, a criança finalmente inclui o alimento na 
+                    sua rotina alimentar, consumindo-o com prazer e confiança.</p>
             </div>
             <div class="imagem-direita">
                 <img src="imagens/crianca-escada.jpeg" alt="Roxo">
@@ -95,17 +86,19 @@
         <!--FIM SESSÃO 3-->
 
         <!--SESSÃO 4-->
-        <h2 class="titulo4">Relatorios disponíveis</h2>
+        <h2 class="titulo4">Repositórioz disponíveis</h2>
         <section class="duas-img-agrupadas">
             <div class="item-duas-img">
                 <img src="imagens/food.JPG">
                 <p>Gráficos de Evolução</p>
-                <p class="paragrafo-cinza">Gráficos em pizza, demonstrando a evolução do paciente a medida que novas sessões forem sendo adicionadas.</p>
+                <p class="paragrafo-cinza">Gráficos em pizza, demonstrando a evolução do paciente a medida que 
+                    novas sessões forem sendo adicionadas.</p>
             </div>
             <div class="item-duas-img">
                 <img src="imagens/grafico-fruta.JPG">
                 <p>Avaliação do período de sessões</p>
-                <p class="paragrafo-cinza">Avaliação dentro de um período ou uma avaliação individual de alimentos, auxiliando o profissional a decidir qual o próximo passo e estratégia necessária a seguir.</p>
+                <p class="paragrafo-cinza">Avaliação dentro de um período ou uma avaliação individual de alimentos, 
+                    auxiliando o profissional a decidir qual o próximo passo e estratégia necessária a seguir.</p>
             </div>
         </section>
         <!--FIM SESSÃO 4-->
@@ -116,19 +109,23 @@
             <div class="dev-box">
                 <div class="dev-info">
                     <img src="imagens/livro-guia-orientacoes.jpeg" alt="roxo">
-                    <p>Nome<br><small class="paragrafo-cinza">Função / Cargo</small></p>
+                    <p>Manual de orientação de dificuldades alimentares<br>
+                    <small class="paragrafo-cinza">Trabalha as dificuldades alimentares e seus desafios.</small></p>
                 </div>
             </div>
             <div class="dev-box">
                 <div class="dev-info">
                     <img src="imagens/livro-alimentos.JPG" alt="roxo">
-                    <p>Nome<br><small class="paragrafo-cinza">Função / Cargo</small></p>
+                    <p>Alimentos, Nutrição e Dietoterapia - Perguntas e Respostas - Krause<br>
+                    <small class="paragrafo-cinza">Trabalha com a questão clínica de cada fase do ser humano.</small></p>
                 </div>
             </div>
             <div class="dev-box">
                 <div class="dev-info">
                     <img src="imagens/livro-nutrientes.JPG" alt="roxo">
-                    <p>Nome<br><small class="paragrafo-cinza">Função / Cargo</small></p>
+                    <p>Biodisponibilidade de Nutrientes<br>
+                    <small class="paragrafo-cinza">Trabalha sobre os nutrientes e micronutrientes encontrados nos alimentos, 
+                        bem como sua interação com outros alimentos e/ou medicamentos.</small></p>
                 </div>
             </div>
         </section>
