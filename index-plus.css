@@ -1,0 +1,246 @@
+body {
+    background: linear-gradient(120deg, #e57373 0%, #ffe082 100%);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    animation: fadeBody 1.2s;
+}
+
+@keyframes fadeBody {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.cabecalho,
+.rodape {
+    animation: slideDown 1s ease;
+    background: rgba(245, 245, 245, 0.97);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.13);
+    margin-bottom: 18px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.conteudo,
+main {
+    animation: fadeIn 1.2s;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.09);
+    padding: 32px 24px 24px 24px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.botao1,
+.botao2,
+.botao3 {
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    background: #b76e79;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    padding: 12px 24px;
+    margin: 8px 0;
+    opacity: 0.97;
+    box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.09);
+}
+
+.botao1:hover,
+.botao2:hover,
+.botao3:hover,
+.botao1:focus,
+.botao2:focus,
+.botao3:focus {
+    background: #8e3e53;
+    color: #ffe082;
+    opacity: 1;
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.17);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.beautiful-kids-container img,
+.item-tres-img img,
+.item-duas-img img,
+.imagem-direita img,
+.dev-info img,
+.icones img {
+    border-radius: 12px;
+    box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.13);
+    animation: pulse 2s infinite;
+    background: #f5f5f5;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.titulo,
+.titulo-principal,
+.titulo2,
+.titulo4,
+.texto3,
+.texto5 {
+    color: #8e3e53;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #e57373a0;
+}
+
+.paragrafo-cinza,
+.login-container small,
+.rodape .paragrafo-cinza {
+    color: #5a5a5a;
+}
+
+.cabecalho {
+    padding: 20px 30px 10px 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.rodape {
+    padding: 20px 30px 10px 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+    background: rgba(245, 245, 245, 0.98);
+}
+
+.menu a {
+    color: #8e3e53;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.menu a:hover,
+.menu a:focus {
+    color: #c62828;
+    text-decoration: underline;
+}
+
+.dev-box,
+.item-tres-img,
+.item-duas-img {
+    background: #f0e4e9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.07);
+    padding: 16px;
+    margin: 10px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.dev-box:hover,
+.item-tres-img:hover,
+.item-duas-img:hover {
+    box-shadow: 0 6px 24px 0 rgba(31, 38, 135, 0.15);
+    transform: translateY(-2px) scale(1.03);
+}
+
+.faixa-cinza {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin: 24px 0;
+    box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botoes-direitos {
+    display: flex;
+    gap: 16px;
+}
+
+.icones img {
+    width: 32px;
+    margin: 0 6px;
+    filter: grayscale(0.2) brightness(0.93);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.icones img:hover {
+    filter: grayscale(0) brightness(1.1);
+    transform: scale(1.12);
+}
+
+@media (max-width: 900px) {
+
+    .conteudo,
+    main,
+    .cabecalho,
+    .rodape {
+        max-width: 98vw;
+        padding: 10px;
+    }
+
+    .faixa-cinza {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .botoes-direitos {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .conteudo,
+    main,
+    .cabecalho,
+    .rodape {
+        max-width: 100vw;
+        padding: 4px;
+    }
+
+    .faixa-cinza {
+        padding: 10px 4px;
+    }
+}
