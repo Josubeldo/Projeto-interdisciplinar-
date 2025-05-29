@@ -38,6 +38,16 @@ if (!$conn->connect_error) {
     <link rel="stylesheet" href="lista-pacientes.css">
 </head>
 <body>
+    <!--CABEÇALHO-->
+    <!-- <header class="cabecalho">
+        <h2 class="titulo">Nutri Kids</h2>
+        <nav class="menu">
+            <a href="lista-pacientes.php">Pacientes</a>
+            <a href="logout.php">Logout</a>
+            <a href="dashboard.php" class="voltar_menu"><i class="fas fa-home"></i></a>
+        </nav>
+    </header> -->
+    <!--FIM CABEÇALHO-->
     <div class="lista-container">
         <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="TEA Logo" />
         <h1>Pacientes Cadastrados</h1>
