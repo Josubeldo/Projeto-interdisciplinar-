@@ -1,0 +1,14 @@
+Site para nutricionista infantil.
+
+Terapia alimentar ou terapia nutricional, trabalha com criança que são mal criadas e não comem as coisas que precisam, por que os pais são uns bunda moles
+Programa pitanga pró, consegue botar dentro das tabelas la, o alimento que a gente trabalhou com a criança e registrar as reações da criança, e a partir daí ele faz gráficos, 
+
+Hoje ela usa o web diet, e a parte de gráficos é feito a parte com excel.
+
+Web diet é usado para escrever os prontuários, planejamento alimentar a dieta, peso e altura (antropometria), e orientações aos pais.
+
+A terapia alimentar utilizado a técnica "Escalada do comer" é registrada a parte no excel, onde é registrado quais alimentos foram utilizados, e qual nível de interação inicial com aqueles alimentos e o nível de interação final, e baseado nesses níveis ele gera uma tabela "ação" que é a quantidade de alimentos que foram interagidos com relação ao nível de interação, ou seja quantos foram tolerados no inicio da sessão, e quantos alimentos foram tolerados no fim da sessão, quantos alimentos foram tocados no início da sessão e quantos foram tocados no fim tocados no fim da sessão e assim por diante.
+
+A partir dessa tabela de ação dois gráficos são necessários para o acompanhamento, um gráfico em barra e outro em pizza mostrando a evolução, sendo o gráfico em barra em números, ou seja quantos alimentos eram meramente tolerados e quantos foram tocados, ou comidos e assim por diante, e o gráfico em pizza separa essa interação também em quantidades mas suas cores representam cada degrau dessa "Escalada".
+
+No final terá um ultimo gráfico para mostrar a avaliação de um período de sessões com os mesmos alimentos, e uma avaliação individual dos alimentos.
