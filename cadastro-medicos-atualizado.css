@@ -12,6 +12,7 @@ body {
     padding: 10px 20px;
     flex-wrap: wrap;
     margin-bottom: 70px;
+    
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }

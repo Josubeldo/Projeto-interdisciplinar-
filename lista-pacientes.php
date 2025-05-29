@@ -36,6 +36,7 @@ if (!$conn->connect_error) {
     <meta charset="UTF-8">
     <title>Lista de Pacientes</title>
     <link rel="stylesheet" href="lista-pacientes.css">
+    <link rel="stylesheet" href="lista-pacientes-atualizado.css">
 </head>
 <body>
     <!--CABEÇALHO-->
