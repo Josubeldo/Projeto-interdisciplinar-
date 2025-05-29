@@ -48,20 +48,21 @@ if (isset($_POST['cadastrar'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de paciente</title>
-    <link rel="stylesheet" href="cadastro-pacientes-plus.css">
+    <!--<link rel="stylesheet" href="cadastro-pacientes-plus.css">-->
+    <link rel="stylesheet" href="cadastro-pacientes.css">
 </head>
 
 <body>
-    <!--CABEÇALHO-->
-    <!-- <header class="cabecalho">
-        <h2 class="titulo">Nutri Kids</h2>
+    <header class="cabecalho">
+        <h2 class="titulo">NutriVibe</h2>
         <nav class="menu">
-            <a href="lista-pacientes.php">Pacientes</a>
-            <a href="logout.php">Logout</a>
-            <a href="dashboard.php" class="voltar_menu"><i class="fas fa-home"></i></a>
+            <a href="cadastro-medicos.php">Médicos</a>
+            <a href="login.php">Login</a>
+            <a href="formularios-preenchimento.php">Formulários</a>
+            <a href="index.php" class="voltar_menu"><i class="fas fa-home"></i></a>
         </nav>
-    </header> -->
-    <!--FIM CABEÇALHO-->
+    </header>
+    <section class="posicao">
     <div class="cadastro-container">
         <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="TEA Logo" />
         <h1>Cadastro de Paciente</h1>
@@ -105,6 +106,7 @@ if (isset($_POST['cadastrar'])) {
         </form>
         <small>Bem-vindo! Cadastre pacientes para o Portal TEA.</small>
     </div>
+    </section>
     <script>
         function validarCamposPaciente() {
             var nome = document.querySelector('input[name="nome"]').value.trim();

@@ -11,7 +11,7 @@ body {
     justify-content: space-between;
     padding: 10px 20px;
     flex-wrap: wrap;
-    margin-bottom: 70px;
+    margin-bottom: 90px;
 }
 
 .titulo {
@@ -142,8 +142,8 @@ body {
 
 .cadastro-btn:enabled:hover,
 .cadastro-btn:enabled:focus {
-    background: #dd5050;
-    color: #291f1f;
+    background: #83db3b;
+    color: #291f1f; 
 }
 
 @keyframes fadeIn {
