@@ -99,12 +99,28 @@
             display: block;
             margin-top: 10px;
         }
+        .mensagem-sucesso {
+            background: #eafaf1;
+            color: #27ae60;
+            border: 1px solid #27ae60;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 18px;
+            font-weight: bold;
+            font-size: 1em;
+            animation: fadeIn 0.8s;
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="TEA Logo" />
         <h2>Portal TEA</h2>
+        <?php
+        if (isset($_GET['cadastro-medico'])) {
+            echo "<div class='mensagem-sucesso'>Médico cadastrado com sucesso!<br>Faça login com seu usuário e senha.</div>";
+        }
+        ?>
         <form method="post" action="">
             <div class="input-group">
                 <label for="usuario">Usuário: <span style="color: #c62828;">*</span></label>
@@ -119,6 +135,7 @@
         <small>Bem-vindo! Portal dedicado ao cuidado de pessoas com TEA.</small>
     </div>
     <?php
+
     if (isset($_POST['entrar'])) {
         // Aqui você pode adicionar a lógica de autenticação
         echo "<script>alert('Login realizado!');</script>";

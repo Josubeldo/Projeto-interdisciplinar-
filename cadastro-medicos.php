@@ -1,39 +1,48 @@
 <?php
-// Conexão com o banco de dados
-$servername = "localhost";
-$username = "dbusertea";
-$password = "ProjetoInterdisciplinar";
-$dbname = "projeto_tea";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
+if (isset($_POST['cadastrar'])) {
+    // Conexão com o banco de dados
+    $servername = "localhost";
+    $username = "dbusertea";
+    $password = "ProjetoInterdisciplinar";
+    $dbname = "projeto_tea";
 
-// Verifica se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $crm = $_POST['crm'];
-    $especialidade = $_POST['especialidade'];
-    $telefone = $_POST['telefone'];
-    $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $sql = "INSERT INTO medicos (nome, crm, especialidade, telefone, email, senha) VALUES ('$nome', '$crm', '$especialidade', '$telefone', '$email', '$senha')";
-
-    if ($conn->query($sql) === TRUE) {
-        $mensagem = "Cadastro realizado com sucesso!";
-    } else {
-        $erro = "Erro: " . $sql . "<br>" . $conn->error;
+    if ($conn->connect_error) {
+        die("Falha na conexão: " . $conn->connect_error);
     }
-}
 
-$conn->close();
+    // Verifica se o formulário foi enviado
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nome = $_POST['nome'];
+        $crm = $_POST['crm'];
+        $especialidade = $_POST['especialidade'];
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+        $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO medicos (nome, crm, especialidade, telefone, email, senha) VALUES ('$nome', '$crm', '$especialidade', '$telefone', '$email', '$senha')";
+
+        if ($conn->query($sql) === TRUE) {
+            header("Location: login.php?cadastro-medico=true");
+            exit();
+        } else {
+            $erro = "Erro: " . $sql . "<br>" . $conn->error;
+        }
+    }
+
+    $conn->close();
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,45 +57,68 @@ $conn->close();
             align-items: center;
             justify-content: center;
         }
+
         .cadastro-container {
-            background: rgba(255,255,255,0.95);
+            background: rgba(255, 255, 255, 0.95);
             position: relative;
             z-index: 2;
             border-radius: 18px;
-            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
             padding: 40px 30px 30px 30px;
             width: 370px;
             text-align: center;
             animation: slideDown 1s ease;
         }
+
         @keyframes slideDown {
-            from { transform: translateY(-60px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(-60px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
+
         .cadastro-container img {
             width: 80px;
             margin-bottom: 10px;
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0% { transform: scale(1);}
-            50% { transform: scale(1.07);}
-            100% { transform: scale(1);}
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.07);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
+
         .cadastro-container h1 {
             margin-bottom: 18px;
             color: #b76e79;
         }
+
         .input-group {
             margin-bottom: 18px;
             text-align: left;
         }
+
         .input-group label {
             color: #b76e79;
             font-weight: bold;
             margin-bottom: 3px;
             display: block;
         }
+
         .input-group input {
             width: 95%;
             padding: 10px;
@@ -98,9 +130,11 @@ $conn->close();
             outline: none;
             transition: background 0.3s;
         }
+
         .input-group input:focus {
             background: #f9e79f;
         }
+
         .cadastro-btn {
             display: none;
             width: 100%;
@@ -115,34 +149,46 @@ $conn->close();
             transition: background 0.3s, color 0.3s;
             opacity: 0.7;
         }
+
         .cadastro-btn:enabled {
             cursor: pointer;
             opacity: 1;
         }
+
         .cadastro-btn:enabled:hover,
         .cadastro-btn:enabled:focus {
             background: #c62828;
             color: #fff;
         }
+
         .cadastro-container:hover .cadastro-btn,
         .cadastro-container:focus-within .cadastro-btn {
             display: block;
             animation: fadeIn 0.5s;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0;}
-            to { opacity: 1;}
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
+
         .cadastro-container small {
             color: #b76e79;
             display: block;
             margin-top: 10px;
         }
+
         .mensagem {
             margin-bottom: 15px;
             color: #27ae60;
             font-weight: bold;
         }
+
         .erro {
             margin-bottom: 15px;
             color: #c0392b;
@@ -150,6 +196,7 @@ $conn->close();
         }
     </style>
 </head>
+
 <body>
     <div class="cadastro-container">
         <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="TEA Logo" />
@@ -188,34 +235,36 @@ $conn->close();
                 <label for="senha">Senha: <span style="color: #c62828;">*</span></label>
                 <input type="password" id="senha" name="senha" required>
             </div>
-            <button class="cadastro-btn" type="submit">Cadastrar</button>
+            <button class="cadastro-btn" type="submit" name="cadastrar">Cadastrar</button>
         </form>
         <small>Bem-vindo! Cadastre médicos para o Portal TEA.</small>
     </div>
     <script>
-function validarCamposMedico() {
-    var nome = document.getElementById('nome').value.trim();
-    var crm = document.getElementById('crm').value.trim();
-    var especialidade = document.getElementById('especialidade').value.trim();
-    var telefone = document.getElementById('telefone').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var senha = document.getElementById('senha').value.trim();
-    var btn = document.querySelector('.cadastro-btn');
-    if (nome && crm && especialidade && telefone && email && senha) {
-        btn.disabled = false;
-    } else {
-        btn.disabled = true;
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('nome').addEventListener('input', validarCamposMedico);
-    document.getElementById('crm').addEventListener('input', validarCamposMedico);
-    document.getElementById('especialidade').addEventListener('input', validarCamposMedico);
-    document.getElementById('telefone').addEventListener('input', validarCamposMedico);
-    document.getElementById('email').addEventListener('input', validarCamposMedico);
-    document.getElementById('senha').addEventListener('input', validarCamposMedico);
-    validarCamposMedico();
-});
-</script>
+        function validarCamposMedico() {
+            var nome = document.getElementById('nome').value.trim();
+            var crm = document.getElementById('crm').value.trim();
+            var especialidade = document.getElementById('especialidade').value.trim();
+            var telefone = document.getElementById('telefone').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var senha = document.getElementById('senha').value.trim();
+            var btn = document.querySelector('.cadastro-btn');
+            if (nome && crm && especialidade && telefone && email && senha) {
+                btn.disabled = false;
+            } else {
+                btn.disabled = true;
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('nome').addEventListener('input', validarCamposMedico);
+            document.getElementById('crm').addEventListener('input', validarCamposMedico);
+            document.getElementById('especialidade').addEventListener('input', validarCamposMedico);
+            document.getElementById('telefone').addEventListener('input', validarCamposMedico);
+            document.getElementById('email').addEventListener('input', validarCamposMedico);
+            document.getElementById('senha').addEventListener('input', validarCamposMedico);
+            validarCamposMedico();
+        });
+
+    </script>
 </body>
+
 </html>
