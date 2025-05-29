@@ -30,7 +30,8 @@ if (isset($_POST['cadastrar'])) {
                 )";
 
         if ($conn->query($sql) === TRUE) {
-            echo "<div class='mensagem'>Paciente cadastrado com sucesso!</div>";
+            header("Location: lista-pacientes.php?sucesso=1");
+            exit();
         } else {
             echo "<div class='erro'>Erro: " . $conn->error . "</div>";
         }
@@ -51,6 +52,16 @@ if (isset($_POST['cadastrar'])) {
 </head>
 
 <body>
+    <!--CABEÇALHO-->
+    <!-- <header class="cabecalho">
+        <h2 class="titulo">Nutri Kids</h2>
+        <nav class="menu">
+            <a href="lista-pacientes.php">Pacientes</a>
+            <a href="logout.php">Logout</a>
+            <a href="dashboard.php" class="voltar_menu"><i class="fas fa-home"></i></a>
+        </nav>
+    </header> -->
+    <!--FIM CABEÇALHO-->
     <div class="cadastro-container">
         <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="TEA Logo" />
         <h1>Cadastro de Paciente</h1>
