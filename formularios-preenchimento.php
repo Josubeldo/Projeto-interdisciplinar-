@@ -5,18 +5,18 @@
     <title>Formulário de Consulta - TEA</title>
     <style>
         :root {
-            --primary: #1a237e;         /* Azul escuro */
+            --primary:rgb(26, 126, 26);         /* Azul escuro */
             --primary-light: #3949ab;   /* Azul médio */
-            --secondary: #c62828;       /* Vermelho escuro */
+            --secondary:rgb(46, 46, 46);       /* Vermelho escuro */
             --secondary-light: #e57373; /* Vermelho claro */
             --background: #f5f5f5;      /* Cinza claro */
             --input-bg: #e3eafc;        /* Azul bem claro */
-            --input-focus: #ffe082;     /* Amarelo claro */
+            --input-focus:rgb(214, 214, 214);     /* Amarelo claro */
             --text: #222;
         }
         body {
-            background: linear-gradient(120deg, var(--primary-light) 0%, var(--secondary-light) 100%);
-            font-family: Arial, sans-serif;
+            background-image: url(imagens/maca.jpeg);
+            font-family:'Times New Roman', Times, serif;
             min-height: 100vh;
             margin: 0;
             display: flex;

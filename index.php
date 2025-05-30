@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="index-atualizado.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/all.min.css">
     <title>NutriVibe</title>
@@ -60,8 +60,8 @@
 
         <!--SESSÃO 3-->
         <section class="texto-imagem">
-            <div class="texto-esquerda">
-                <h2 class="texto3">O que é isso afinal de contas? e As etapas da Escalada do Comer</h2>
+            <div class="texto-esquerda" >
+                <h2 class="texto3">O que é isso afinal de contas?</h2>
                 <p>O que é isso afinal de contas?</p>
                 <p>A Escalada do Comer é um conceito fundamental dentro da nutrição infantil que descreve 
                    o processo natural e gradual pelo qual a criança desenvolve suas habilidades 
@@ -70,6 +70,7 @@
                    preferências, sua curiosidade e até mesmo suas inseguranças. Entender a Escalada do Comer 
                    ajuda pais, cuidadores e profissionais a oferecerem o suporte necessário sem gerar pressões 
                    ou traumas.</p>
+                <h2 class="texto3">As etapas da escalada do comer</h2>
                 <p> Tolerar: A criança começa a reconhecer os alimentos, observando-os e se familiarizando 
                     com suas cores, formas e cheiros. É o primeiro passo para a aceitação.<br><br>
                     Interagir: A criança passa a explorar o alimento com os sentidos: olhando, tocando, 
@@ -86,7 +87,7 @@
         <!--FIM SESSÃO 3-->
 
         <!--SESSÃO 4-->
-        <h2 class="titulo4">Repositórioz disponíveis</h2>
+        <h2 class="titulo4">Repositórios disponíveis</h2>
         <section class="duas-img-agrupadas">
             <div class="item-duas-img">
                 <img src="imagens/food.JPG">
@@ -104,7 +105,7 @@
         <!--FIM SESSÃO 4-->
 
         <!--SESSÃO 5-->
-        <h2 class="texto5">Depoimentos</h2>
+        <h2 class="texto5">Livros recomendados</h2>
         <section class="desenvolvedores">
             <div class="dev-box">
                 <div class="dev-info">
