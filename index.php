@@ -28,6 +28,7 @@
     <!--CORPO DA PÁGINA-->
     <!--SESSÃO 1-->
     <main class="conteudo">
+        <br><br><br><br><br><br>
         <h1 class="titulo-principal">Nutrição Infantil: Saúde para Crescer e Brincar</h1>
         <p class="p1">Ponha a saúde da criança em primeiro lugar! Cadastre-se agora e otimize suas 
         consultas! </p>
@@ -131,17 +132,6 @@
             </div>
         </section>
         <!--FIM SESSÃO 5-->
-
-        <!--SESSÃO 6-->
-        <section class="faixa-cinza">
-            <div class="texto-esquerdo">
-                <h2>Cadastrar-se</h2>
-            </div>
-            <div class="botoes-direitos">
-                <a href="cadastro-medicos.php" class="botao2">Médico</a>
-            </div>
-        </section>
-        <!--FIM SESSÃO 6-->
     </main>
     <!--FIM CORPO DA PÁGINA-->
 
