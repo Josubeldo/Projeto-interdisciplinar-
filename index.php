@@ -15,9 +15,9 @@
     <header class="cabecalho">
         <h2 class="titulo">NutriVibe</h2>
         <nav class="menu">
-            <a href="cadastro-medicos.php">Médicos</a>
-            <a href="login.php">Login</a>
-            <a href="formularios-preenchimento.php">Formulários</a>
+            <a href="cadastro-medicos.php" target="_blank">Médicos</a>
+            <a href="login.php" target="_blank">Login</a>
+            <a href="formularios-preenchimento.php" target="_blank">Formulários</a>
             <a href="index.php" class="voltar_menu">
                 <img src="imagens/casa-natural.jpeg">
             </a>
@@ -138,7 +138,7 @@
                 <h2>Cadastrar-se</h2>
             </div>
             <div class="botoes-direitos">
-                <a href="#" class="botao2">Médico</a>
+                <a href="cadastro-medicos.php" class="botao2">Médico</a>
             </div>
         </section>
         <!--FIM SESSÃO 6-->
