@@ -10,7 +10,7 @@ if (!isset($_SESSION['medico_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="index-atualizado.css">
     <!--<link rel="stylesheet" type="text/css" href="index-plus.css">-->
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/all.min.css">
